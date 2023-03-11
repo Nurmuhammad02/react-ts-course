@@ -1,26 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Card, {CardVariant} from "./components/Card";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+
+const App = () => {
+    return (
+        <div>
+            <Card onClick={() => console.log('click') } variant={CardVariant.outlined} width="200px" height="200px">
+                <button>Карточка</button>
+                <div>Шкиби ди доп доп ес ес</div>
+            </Card>
+        </div>
+    );
+};
 
 export default App;
