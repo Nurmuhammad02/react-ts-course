@@ -7,7 +7,8 @@ const App = () => {
         <div>
             <Card onClick={() => console.log('click') } variant={CardVariant.outlined} width="200px" height="200px">
                 <button>Карточка</button>
-                <div>Шкиби ди доп доп ес ес</div>
+                <div>123Шкиби ди доп доп ес ес</div>
+
             </Card>
         </div>
     );
