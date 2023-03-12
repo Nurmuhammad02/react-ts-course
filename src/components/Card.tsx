@@ -1,4 +1,4 @@
-import React, {FC, JSXElementConstructor, ReactElement} from 'react';
+import React, {FC, JSXElementConstructor, ReactElement, useState} from 'react';
 
 export enum CardVariant {
     outlined= 'outlined',
@@ -11,7 +11,6 @@ interface CardProps {
     height?: string;
     variant: CardVariant;
     children: ReactElement<any, string> | ReactElement<any, string>[];
-    onClick: () => void;
 }
 
 
@@ -19,14 +18,14 @@ const Card: FC<CardProps> = ({
                                  width,
                                  height,
                                  variant,
-                                 onClick,
                                  children,
 }) => {
+    const [state, setState] = useState(0);
     return (
-        <div style={{width, height, border: variant === CardVariant.outlined ? '1px solid gray' :'none',
+        <div style={{width, height,
+            border: variant === CardVariant.outlined ? '1px solid gray' :'none',
         background: variant === CardVariant.primary ? 'lightgray' : ''
         }}
-        onClick={onClick}
         >
             {children}
         </div>
